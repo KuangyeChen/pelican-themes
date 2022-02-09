@@ -158,6 +158,11 @@
                 {% endif %}
             </ul>
             <ul class="nav navbar-nav navbar-right">
+            {% if extra_siteurls %}
+                {% for lang, url in extra_siteurls.items() %}
+                <li><a href="{{ url }}/">{{ lang }}</a></li>
+                {% endfor %}
+            {% endif %}
             {% if 'tipue_search' in PLUGINS %}
               <li><span>
                 <form class="navbar-search" action="{{ SEARCH_URL | default('/search.html') }}">
